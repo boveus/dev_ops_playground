@@ -12,5 +12,7 @@ Author.destroy_all
 30.times do
   name = Faker::Book.author.split(' ')
   author = Author.create(first_name: name[0], last_name: name[1])
-  Book.create(title: Faker::Book.title, author: author, date_published: Faker::Date.between(90.years.ago, Date.today))
+  rand(1..8).times do
+    Book.create(title: Faker::Book.title, author: author, date_published: Faker::Date.between(90.years.ago, Date.today))
+  end
 end
