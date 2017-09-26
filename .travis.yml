@@ -1,29 +1,21 @@
 language: ruby
-
 rvm:
-  - "2.3"
-
+- '2.3'
 env:
-  - DB=postgresql
-
+- DB=postgresql
 script:
-  - bundle exec rspec
-  - bundle exec brakeman --exit-on-warn --quiet -f plain
-  - bundle exec rubycritic --minimum-score 95 --mode-ci --no-browser
+- bundle exec rspec
+- bundle exec brakeman --exit-on-warn --quiet -f plain
+- bundle exec rubycritic --minimum-score 95 --mode-ci --no-browser
 before_script:
-  - bundle exec rake db:create
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-bundler_args: --binstubs=./bundler_stubs
-
-# 5. OPTIONAL Add a Build Status Badge to your README, follow instructions here:
-#    http://docs.travis-ci.com/user/status-images/
-
-# Suggested docs
-# --------------
-# Getting Started: http://docs.travis-ci.com/user/getting-started/
-# Ruby & Travis CI docs: http://docs.travis-ci.com/user/languages/ruby/
-# Supported Ruby Versions: http://rubies.travis-ci.org/
-# Custom build task: http://docs.travis-ci.com/user/customizing-the-build/
-# GUI, Browsers, xvfb: http://docs.travis-ci.com/user/gui-and-headless-browsers/
-# Build Status Badge for README: http://docs.travis-ci.com/user/status-images/
+- bundle exec rake db:create
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+bundler_args: "--binstubs=./bundler_stubs"
+deploy:
+  provider: heroku
+  api_key:
+    secure: vqX1WfO/M10wwQEOJSzNGm6JPSpmgC0O1Z7v0bWgoF5P8bjuRe1ic/LqvP646F7N8tp1JhpJ26ydfwy4puTUyhqsgJiWlVTHYgHJpi1UrbGkcDTMTcQs9A4r1iajINQC8V8BBMcYNlotk3SCXMDL/l3NBoohi5hZzPbbpA4PfUJMIG8GolJXrs7gxNz1Ng1igiVylVyxODsV7VXcMGscL+Lgw522KuYuSIzD04lZKPCNSEInySGbtcIzBsMDzFnVQBUJE9KMN5VMfSYY5sC2b8FTeQxavxtjJlmzBI3QpLkSMTt7QqBAQ3DkuewLVM+cgBtJ71sIgaakhyEYIKEB5hr8VmFD5iCqSl4KTIClUuqcx+8mtdnMHt0PhJ7mhUOyqjWRjmU05MckCzreNFdinTwVByZOxd+P0k0fZHTWIQfziKLdlnCY26UN24J0VccOrEOSvx8ERo20T6kn6ijjh+foCWcO/c1BINv1yqG2StKFlz9NfG7J8sL3r6wbPGWfkOD0dqTo3B8NBxPHMLD5hVOO0/6okQVHtUdtiIU6BF4/7Yy0zVIo4zfCa3UGacfGQ02FuiFA7e1ZbNBsZRZABWmQ9eGqYjmbGgdSUfYlxlpHj/7SOgYWzsFeEORCcurm/TDYWe3Uyxin2IbAk51TeFA0Xlu/DYYPkVv/W+uPTbM=
+  app: devopsplayground
+  on:
+    repo: boveus/dev_ops_playground
