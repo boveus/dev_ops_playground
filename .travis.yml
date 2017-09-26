@@ -9,6 +9,7 @@ script:
 - bundle exec rubycritic --minimum-score 95 --mode-ci --no-browser
 - bundle exec rake --tasks
 before_script:
+- bundle
 - bundle exec rake db:create
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
