@@ -1,5 +1,7 @@
 # README
-This is a project to test various things with Travis CI.  I have done the following things:
+This is a project to test various things with Travis CI.  I am using this to test a few things related to Travis CI.  I plan to continually expand this and add more tools as time goes on.
+
+These are my current additions:
 
 # Install and set up travis gem
 ```
@@ -31,4 +33,9 @@ before_script:
 #run the migration to set up DB schema
 - bundle exec rake db:test:prepare
 #prepare test db
+```
+
+I tested the following gems and couldn't get them to work with Travis
+```
+gem install traceroute
 ```
