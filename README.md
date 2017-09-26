@@ -4,12 +4,13 @@ This is a project to test various things with Travis CI.  I have done the follow
 # Install and set up travis gem
 ```
 gem install travis
+#install travis CLI tools
 travis login
+#set up travis to use github login
 cd <prj directory>
 travis setup heroku
+#set up heroku/travis for current project
 ```
-
-configure API key in the travis YML for my current app
   
 I added the following lines to my Travis YML to facilitate CI:
 
