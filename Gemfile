@@ -7,7 +7,6 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -46,6 +45,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'traceroute'
   gem 'rubycritic'
   gem 'brakeman'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
