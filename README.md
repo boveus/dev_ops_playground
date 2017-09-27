@@ -1,5 +1,9 @@
 # README
-This is a project to test various things with Travis CI.  I am using this to test a few things related to Travis CI.  I plan to continually expand this and add more tools as time goes on.
+This is a project to test a few things related to devops in general.  I am currently working on a few things related to Travis CI and how I can use it to automate static code analysis of rails apps. 
+
+My next goal is to deploy a rails app through Capistrano to a Digital Ocean droplet.
+
+I plan to continually expand this and add more tools as time goes on.  If you are reading this and you are a devops pro or someone interested in devops and want to contribute, please feel free to drop a PR with questions, additions, or requests.  Thanks.
 
 These are my current additions:
 
@@ -35,7 +39,7 @@ before_script:
 #prepare test db
 ```
 
-I tested the following gems and couldn't get them to work with Travis
+I tested the following gems and couldn't get them to work with Travis.  This test is currently living on its own branch.
 ```
 gem install traceroute
 ```
