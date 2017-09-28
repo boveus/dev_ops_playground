@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'traceroute'
   gem 'simplecov'
   gem 'database_cleaner'
   gem 'faker'
@@ -45,7 +46,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'traceroute'
   gem 'rubycritic'
   gem 'brakeman'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
