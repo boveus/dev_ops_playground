@@ -1,6 +1,10 @@
 # config valid only for current version of Capistrano
 lock "3.9.1"
 
+
+
+set :branch, ENV.fetch("digital_ocean", "staging")
+
 set :application, "dev_ops_playground"
 set :repo_url, "git@github.com:boveus/dev_ops_playground.git"
 
@@ -8,7 +12,7 @@ set :repo_url, "git@github.com:boveus/dev_ops_playground.git"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
+set :deploy_to, "/dev_ops_playground"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
