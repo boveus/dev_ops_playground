@@ -4,16 +4,18 @@ rvm:
 env:
 - DB=postgresql
 
+script:
+- bundle exec rspec
+- bundle exec brakeman --exit-on-warn --quiet -f plain
+- bundle exec rubycritic --minimum-score 95 --mode-ci --no-browser
+- FAIL_ON_ERROR=1 bundle exec rake traceroute
+
 before_script:
 - bundle exec rake db:create
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
 
-script:
-- bundle exec rubycritic --minimum-score 95 --no-browser
-- bundle exec rspec
-- bundle exec brakeman --exit-on-warn --quiet -f plain
-- FAIL_ON_ERROR=1 bundle exec rake traceroute
+bundler_args: --without production
 
 deploy:
   provider: heroku
