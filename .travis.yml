@@ -10,7 +10,7 @@ before_script:
 - bundle exec rake db:test:prepare
 
 script:
-- bundle exec rubycritic --minimum-score 95 --mode-ci --no-browser
+- bundle exec rubycritic --minimum-score 95 --no-browser
 - bundle exec rspec
 - bundle exec brakeman --exit-on-warn --quiet -f plain
 - FAIL_ON_ERROR=1 bundle exec rake traceroute
