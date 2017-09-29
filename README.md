@@ -29,7 +29,9 @@ script:
 - bundle exec rubycritic --minimum-score 95 --mode-ci --no-browser
 #run rubycritic and error out if the build scores below 95
 #only run it against the latest commit
-#don't launch a browser
+#don't launch a browsers
+- FAIL_ON_ERROR=1 bundle exec rake traceroute
+# If there are any unused routes or controller actions that are useless, error out.
 before_script:
 - bundle exec rake db:create
 #create the DB before running scripts
@@ -37,9 +39,4 @@ before_script:
 #run the migration to set up DB schema
 - bundle exec rake db:test:prepare
 #prepare test db
-```
-
-I tested the following gems and couldn't get them to work with Travis.  This test is currently living on its own branch.
-```
-gem install traceroute
 ```
