@@ -5,6 +5,31 @@ class Book < ApplicationRecord
     "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
   end
 
+  def bad_method2
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+    "this is an example of a code smell because this line is far too long.  If a line exceeds 80 characters it is a code smell."
+  end
+
   def author_name
     "#{author.first_name} #{author.last_name}"
   end
